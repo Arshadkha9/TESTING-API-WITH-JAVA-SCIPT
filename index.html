@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>p.box1 {border-style: dotted;}</style>
+</head>
+<body>
+    
+    <div id="box">
+        <p class="box1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Qui est sed deserunt fugiat officia culpa omnis fuga ex,
+             vero sit distinctio magni pariatur? Nisi, odio eos dolores
+              facilis adipisci molestias.</p>
+    </div>
+    <h2>GET Example</h2>
+<button onclick="fetchGreet()">Get Greeting</button>
+<p id="greetMsg"></p>
+
+
+<script>
+    async function fetchGreet() {
+      const response = await fetch("http://localhost:5000/api/greet");
+      const data = await response.json();
+      document.getElementById("greetMsg").textContent = data.message;
+    }
+  
+    async function sendData() {
+      const input = document.getElementById("inputData").value;
+  
+      const response = await fetch("http://localhost:5000/api/echo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: input })
+      });
+  
+      const data = await response.json();
+      document.getElementById("postMsg").textContent = JSON.stringify(data);
+    }
+  </script>
+</body>
+</html>
