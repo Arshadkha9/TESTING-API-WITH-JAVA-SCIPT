@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <style>p.box1 {border-style: dotted;}</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    <div id="box">
-        <p class="box1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            Qui est sed deserunt fugiat officia culpa omnis fuga ex,
-             vero sit distinctio magni pariatur? Nisi, odio eos dolores
-              facilis adipisci molestias.</p>
-    </div>
-    <h2>GET Example</h2>
-<button onclick="fetchGreet()">Get Greeting</button>
-<p id="greetMsg"></p>
+  <div class="login-container">
+    <form class="login-form" method="POST" action="http://127.0.0.1:5500/login">
+      <h2>Login</h2>
+      <input type="text" placeholder="Username or Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit" >Log In</button>
+      <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+    </form>
+  </div>
+</body>
+</html>
 
 
-<script>
+
+<!-- <script>
     async function fetchGreet() {
       const response = await fetch("http://localhost:5000/api/greet");
       const data = await response.json();
@@ -43,4 +44,4 @@
     }
   </script>
 </body>
-</html>
+</html> -->
